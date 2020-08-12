@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SimpleComponent} from './simplecomponent';
+import {ProductFormComponent} from './components/productformcomponent/app.productform.component';
 // NgModule decorator with properties
 // 1. imports: of the type array, used to import standard and external
 // angular modules in current application
@@ -20,13 +21,13 @@ import {SimpleComponent} from './simplecomponent';
 // load and render in browser
 @NgModule({
   declarations: [
-    AppComponent, SimpleComponent
+    AppComponent, SimpleComponent, ProductFormComponent
   ],
   imports: [
     BrowserModule, FormsModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ProductFormComponent]
 })
 export class AppModule { }
