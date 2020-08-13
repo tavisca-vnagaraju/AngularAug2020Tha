@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SimpleComponent} from './simplecomponent';
 import {ProductFormComponent} from './components/productformcomponent/app.productform.component';
+import { TableDirectiveComponent } from './directive/componentdirective/app.tablecomponent.directive';
+import { ProductReactiveFormComponent } from './components/productreactiveformcomponent/app.productreactiveform.component';
 // NgModule decorator with properties
 // 1. imports: of the type array, used to import standard and external
 // angular modules in current application
@@ -21,13 +23,14 @@ import {ProductFormComponent} from './components/productformcomponent/app.produc
 // load and render in browser
 @NgModule({
   declarations: [
-    AppComponent, SimpleComponent, ProductFormComponent
+    AppComponent, SimpleComponent, ProductFormComponent,
+    TableDirectiveComponent, ProductReactiveFormComponent
   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule, ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [ProductFormComponent]
+  bootstrap: [ProductReactiveFormComponent]
 })
 export class AppModule { }

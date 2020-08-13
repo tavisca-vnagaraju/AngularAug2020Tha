@@ -17,11 +17,16 @@ export class ProductFormComponent implements OnInit {
   manufacturers = Manufacturers;
   private logic: Logic;
   columnHeaders: Array<string>;
+  emps:Array<any>;
   constructor() {
     this.product = new Product(0, '', '', '', '', '', 0);
     this.products = new Array<Product>();
     this.logic = new Logic();
     this.columnHeaders = new Array<string>();
+    this.emps = new Array<any>();
+    this.emps.push({id:1, name:'A'});
+    this.emps.push({id:2, name:'B'});
+
   }
 
   // method from OnInit interface
@@ -44,7 +49,7 @@ export class ProductFormComponent implements OnInit {
     this.products = this.logic.addProduct(this.product);
     console.log(JSON.stringify(this.products));
   }
-  getSelectedProduct(p: Product): void {
-     this.product = Object.assign({}, p);
+  getSelectedProduct(event): void {
+     this.product = Object.assign({}, event);
   }
 }

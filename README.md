@@ -77,10 +77,38 @@ IMP*** Each Component must be declaraed in 'declarations' array of NgModule
          1. formGroup, formControlName
 3. Components Reusability
    1. Input and Output
-   2. Component Parent Child Communication 
+   2. Component Parent Child Communication
+   3. define the isDelete input decorated property in the Child component. When this is true, then generate delete button for each row in child table. When this button is clicked then the record must be deleted from parent 
 4. Forms
    1. Reactive Forms
+      1. ReactiveFormsMoudule to be impported in NgModule from @angular/forms
+         1. FormGroup class
+            1. applied <form> tag using [formGroup] directive to read the FormModel(?)
+            2. FormGrop is a collection of FormControl
+            3. FormControl is an editable element in <form></form>
+            4. FormControl binds the public property of Model class to the HTML editable elements using 'formControlName' custom attribute directive
+            5. FormGrouo.value, is used to read data posted from <form>
+            6. FormGroup.setValue() method to pass data to form
+            7. FormControl.value is sued to read data from editable element
+            8. FormCOntrolsetValue() to assign value
+         2. Validators class that contains validation methods to validate Model class properties 
    2. Validations
+      1. Implemented usaing Validatores class
+         1. Static methods
+            1. required(AbstractControl)/requiredTrue(AbstractControl)
+            2. min(number)/max(number)
+            3. minlength(number)/maxlength(number)
+            4. pattern(string|RegEx)
+            5. email(AbstractControl)
+            6. compose([Array of Validators])/composeAsync([Array of Validators])
+      2. Evaluate the Model-Validations rules on UI element
+         1. <formGroup>.controls.<formControlName>.dirty, the element is changed
+            1. e.g. frmProduct.controls.ProductRowId.dirty
+         2. <formGroup>.controls.<formControlName>.invalid / !<formGroup>.controls.<formControlName>.valid --> element is invalid based on rules
+            1. e.g. frmProduct.controls.ProductRowId.invalid
+         3. display the error message
+            1. <formGroup>.controls.<formControlName>.errors.<error-condition>
+               1. e.g. frmProduct.controls.ProductRowId.errors.required
 5. Services
    1. Observers with Components
    2. HTTP Communications
@@ -102,3 +130,11 @@ IMP*** Each Component must be declaraed in 'declarations' array of NgModule
    5.  Gulp
    6.  Custom Decorators
 
+
+======================================================================================
+Ex 2: 
+Define the isDelete input decorated property in the Child component. When this is true, then generate delete button for each row in child table. When this button is clicked then the record must be deleted from parent 
+
+Ex 3: Validate the complete ProductForm for required for all inputs, Description must not be more than 50 characters, BasePrice Cannot be -ve, ProductName must not have any special characters, ProductId must not have blank space. (Mandatory)
+
+Ex. 4: Write a custom validator that will not accept duplicate value for ProductId (Mandory)
