@@ -10,7 +10,17 @@
 </head>
 
 <body>
-    <app-service-component></app-service-component>
+    <app-elementuser-component></app-elementuser-component>
+    <dropdown-element on-selectionChanged="onSelectionChanged($event)"></dropdown-element>
+    <script>
+        window.onload = function() {
+            var element = document.querySelector('dropdown-element');
+            element.itesm = ['V', 'R', 'L'];
+            element.addEventListener('SelectionChanged', function() {
+                // logic
+            }, false);
+        }
+    </script>
 </body>
 
 </html>

@@ -156,3 +156,26 @@ Obseravble.subscribe(), stream data to subscriber when it is available in observ
 
 ======================================================================
 Modify the Product Reactiuve Form with the Http Service Support, to perform CRUD operations. The Table showing the Products data sould have delete button to delete (Note: Delete request must be made form the ProductReactiveFormComponent)
+=======================================================================
+Directives
+	- reusable UI
+	- reusable functional behavior
+
+Elements
+	- Principals of WebComponents like LitElements
+	- More Flexible and easy to configure than LitElements
+	- Angular Component as Elemement
+	- Packages
+  	- @angular/element
+  	- document-register-element
+    	- Provode the Custom Element Registartion in DOM
+    	- Help the CustolElementRegistry of the browser to load/instantiate and execute the Custom Element
+	- Custom events are defined in Angular Elements using EventEmitter<T>
+  	- The subscriber of the event from the Angular-Elements 'must use' the CustomEvent object to read data from the event
+  	- The subsciber of the event emitted from Angular Element must use on-<EventName>="<Method>($event)"  
+
+Angular Component Vs Component Directive vs Element
+
+Presenter with Logic for Angular Application --> Angular Component
+Presenter with reusable Functional UI within Angular Application (Same Project / Multiple Angular Projects) --> Angular Component Directive
+Reusable FUnctional UI for Hybrid Front-End Apps (?) --> Angular Element
