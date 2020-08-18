@@ -179,3 +179,21 @@ Angular Component Vs Component Directive vs Element
 Presenter with Logic for Angular Application --> Angular Component
 Presenter with reusable Functional UI within Angular Application (Same Project / Multiple Angular Projects) --> Angular Component Directive
 Reusable FUnctional UI for Hybrid Front-End Apps (?) --> Angular Element
+======================================================================
+Custom Reusable Behavior implmented using Directives
+Impleted as 'Custom Attribute Directive'
+1. Target the HTML Element that will be affected with behavior
+   1. ElementRef, the class that will target to HTML element for applying directive
+2. Deifine the type of effect e.g. updating the style
+   1. Renderer2, the class that will be use to apply the effect on element and render it
+3. Event that cause the custom effect  
+   1. HostListener decorator, applied on methods of the directives so that these method will be executed / invoked when an event is raised on HTML element that is applied with directive
+4. Directive Decorator applied on class
+5. Custom Attribute directives are always used as 'Property-Binding'
+
+========================================================================
+Ex 6: (Offline), thursday
+Create a custom directive that will host the blur event of the HTML input element and perform that following operations
+- should validate the data entered into the text element against the Credit-Card Expression
+  - XXXX-XXXX-XXXX-XXXX
+    - SHould Automatically add '-' in the expression after validating the card expression 
