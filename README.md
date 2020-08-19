@@ -157,22 +157,9 @@ Obseravble.subscribe(), stream data to subscriber when it is available in observ
 ======================================================================
 Modify the Product Reactiuve Form with the Http Service Support, to perform CRUD operations. The Table showing the Products data sould have delete button to delete (Note: Delete request must be made form the ProductReactiveFormComponent)
 =======================================================================
-Directives
-	- reusable UI
-	- reusable functional behavior
+Directives - reusable UI - reusable functional behavior
 
-Elements
-	- Principals of WebComponents like LitElements
-	- More Flexible and easy to configure than LitElements
-	- Angular Component as Elemement
-	- Packages
-  	- @angular/element
-  	- document-register-element
-    	- Provode the Custom Element Registartion in DOM
-    	- Help the CustolElementRegistry of the browser to load/instantiate and execute the Custom Element
-	- Custom events are defined in Angular Elements using EventEmitter<T>
-  	- The subscriber of the event from the Angular-Elements 'must use' the CustomEvent object to read data from the event
-  	- The subsciber of the event emitted from Angular Element must use on-<EventName>="<Method>($event)"  
+Elements - Principals of WebComponents like LitElements - More Flexible and easy to configure than LitElements - Angular Component as Elemement - Packages - @angular/element - document-register-element - Provode the Custom Element Registartion in DOM - Help the CustolElementRegistry of the browser to load/instantiate and execute the Custom Element - Custom events are defined in Angular Elements using EventEmitter<T> - The subscriber of the event from the Angular-Elements 'must use' the CustomEvent object to read data from the event - The subsciber of the event emitted from Angular Element must use on-<EventName>="<Method>(\$event)"
 
 Angular Component Vs Component Directive vs Element
 
@@ -182,11 +169,12 @@ Reusable FUnctional UI for Hybrid Front-End Apps (?) --> Angular Element
 ======================================================================
 Custom Reusable Behavior implmented using Directives
 Impleted as 'Custom Attribute Directive'
+
 1. Target the HTML Element that will be affected with behavior
    1. ElementRef, the class that will target to HTML element for applying directive
 2. Deifine the type of effect e.g. updating the style
    1. Renderer2, the class that will be use to apply the effect on element and render it
-3. Event that cause the custom effect  
+3. Event that cause the custom effect
    1. HostListener decorator, applied on methods of the directives so that these method will be executed / invoked when an event is raised on HTML element that is applied with directive
 4. Directive Decorator applied on class
 5. Custom Attribute directives are always used as 'Property-Binding'
@@ -194,6 +182,45 @@ Impleted as 'Custom Attribute Directive'
 ========================================================================
 Ex 6: (Offline), thursday
 Create a custom directive that will host the blur event of the HTML input element and perform that following operations
+
 - should validate the data entered into the text element against the Credit-Card Expression
   - XXXX-XXXX-XXXX-XXXX
-    - SHould Automatically add '-' in the expression after validating the card expression 
+    - SHould Automatically add '-' in the expression after validating the card expression
+
+======================================================================
+Micro Front-End using Angular
+
+1. Create two or more Angular Apps with following mandatory packages
+   1. @angular/elements
+   2. @webcomponents/custom-elements
+   3. @webcomponents/webcomponentsjs
+   4. document-register-element
+2. For each Angular app Run the following command
+   1. ng add ngx-build-plus
+      1. Angular CLI Express Build for compiling the Angular application into single distributable js file
+   2. Modify the angular.json of each Angular project with its build configuration
+      1. "architect": {
+         "build": {
+         "builder": "ngx-build-plus:build",
+   3. Create Angular Elements with required logic
+3. Build each angular app in single file using following command
+   1. ng build --prod --output-hashing none --single-bundle true
+      1. Bundle all Angular dependencies in a single file main.js
+      2. ./dist/<project-folder>/main.js
+4. Host each Angular app in seperate host
+   1. Docker Image (recommanded)
+      1. Node.js + Angular Image of Docker
+   2. Node.js server
+      1. lite server
+      2. Express Server
+      3. http-server
+         1. npm install -g http-server
+         2. To start the server on a port
+            1. http-server -p <PORT-NO>
+   3. Any other web Server
+5. Add a Container Application (Angular/React/JavaScript)
+   1. Use CDN to refer the following JS
+      1. <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
+      2.
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+   2. Load the output JavaScript from Angular app from their CDNs
