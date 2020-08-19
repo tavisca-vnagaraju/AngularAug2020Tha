@@ -224,3 +224,5 @@ Micro Front-End using Angular
       2.
       <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
    2. Load the output JavaScript from Angular app from their CDNs
+
+Create 3 angular App, two apps will have Angular Elements with npx build (see Micro Front-End using Angular above), load these apps as Micro Front-Ends in the third angular app
