@@ -23,6 +23,8 @@ import {ElementUserComponent} from './elements/app.elementuser.component';
 import './litelementsdemo/app.simpleelement.litelement';
 // importing Angular components those will be used as Elements
 import {DropDownElement} from './elements/app.dropdown.element';
+import { ColorDirective } from './directive/customdirective/app.color.directive';
+import { ColorDirectiveComponent } from './components/colordirectivecomponent/app.colordirective.component';
 
 
 // NgModule decorator with properties
@@ -48,7 +50,8 @@ import {DropDownElement} from './elements/app.dropdown.element';
     TableDirectiveComponent, ProductReactiveFormComponent,
     CategorySenderComponent, ProductReceiverComponent,
     ServiceComponent, LifecycleParentComponent, LifecycleChildComponent,
-    ListElementComponent, DropDownElement, ElementUserComponent
+    ListElementComponent, DropDownElement, ElementUserComponent,
+    ColorDirective, ColorDirectiveComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -58,7 +61,7 @@ import {DropDownElement} from './elements/app.dropdown.element';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [DropDownElement],
   providers: [],
-  bootstrap: [ElementUserComponent]
+  bootstrap: [ProductReactiveFormComponent]
 })
 export class AppModule {
   // process for registering the Angular Component as Custom Element
