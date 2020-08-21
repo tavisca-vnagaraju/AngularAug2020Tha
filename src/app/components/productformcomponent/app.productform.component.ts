@@ -17,15 +17,15 @@ export class ProductFormComponent implements OnInit {
   manufacturers = Manufacturers;
   private logic: Logic;
   columnHeaders: Array<string>;
-  emps:Array<any>;
+  tax: number;
+
   constructor() {
     this.product = new Product(0, '', '', '', '', '', 0);
     this.products = new Array<Product>();
     this.logic = new Logic();
     this.columnHeaders = new Array<string>();
-    this.emps = new Array<any>();
-    this.emps.push({id:1, name:'A'});
-    this.emps.push({id:2, name:'B'});
+    this.tax = 0;
+
 
   }
 
@@ -46,6 +46,7 @@ export class ProductFormComponent implements OnInit {
     this.product = new Product(0, '', '', '', '', '', 0);
   }
   save(): void {
+    this.tax = this.product.BasePrice * 0.2;
     this.products = this.logic.addProduct(this.product);
     console.log(JSON.stringify(this.products));
   }

@@ -226,3 +226,22 @@ Micro Front-End using Angular
    2. Load the output JavaScript from Angular app from their CDNs
 
 Create 3 angular App, two apps will have Angular Elements with npx build (see Micro Front-End using Angular above), load these apps as Micro Front-Ends in the third angular app
+
+========================================================
+Using Third Party CSS Frwks or Libs
+
+1. .scss files
+   1. Computed Styles
+   2. CSS Objects for setting the Styles using CSS Modules
+   3. Bootstrap
+   4. IOTA CSS
+2. Trasnspile SCSS into CSS
+   1. gulp 1. JavaScript Task Manager to stream multiple tasks(?) together 1. Reading files (.js/.css/.img) 2. Merge all .js files into a single .js file 3. Minify the js file to optimize it 1. e.g. all.js --> all.min.js 4. Tarnspile .scss into .css
+
+Custom Decorators, feature of ES 7, allows developers to define an additional metadata for class, method, and property
+
+- define custom common proerties to the class
+- define custom logger for the classes
+- syntax
+  - a custom function that used to define properties using
+    - Object.defineProperty()
