@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+// import the method decorator
+import {logMethod } from './../app/customdecorator/app.custom.decorator';
+
 
 // properties of component
 // selector: the custom HTML Tag using which the component will be
@@ -31,7 +34,8 @@ export class AppComponent {
 
    }
 
-   show(): void {
+  show(): void {
+     this.printMessage('Custom Decorator');
      if (this.isVisible) {
        this.isVisible = false;
      }else {
@@ -42,4 +46,10 @@ export class AppComponent {
    display(event): void {
      this.message = `The Event is Raised ${event.target.value}`;
    }
+
+  // applied the decorator
+  @logMethod()
+  printMessage(name: string): void {
+    console.log(`The Print Message Method ${name}`);
+  }
 }

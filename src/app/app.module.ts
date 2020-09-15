@@ -61,7 +61,7 @@ import { ColorDirectiveComponent } from './components/colordirectivecomponent/ap
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [DropDownElement],
   providers: [],
-  bootstrap: [ProductReactiveFormComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   // process for registering the Angular Component as Custom Element
